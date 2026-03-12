@@ -1,0 +1,81 @@
+2.
+Create table Employee(
+ENum varchar2(20),
+EName varchar2(20),
+Position varchar2(30),
+salary integer, 
+DeptId varchar2(20)
+);
+
+Create table Project(
+PId varchar2(20),
+PName varchar2(20),
+Budget integer
+);
+
+
+Create table Department(
+DeptId varchar2(20),
+Dept_name varchar2(30)
+);
+
+Create table WorkON(
+Enum varchar2(20),
+PId varchar2(20),
+Responsibility varchar2(50),
+Hours integer
+);
+
+
+3.
+Insert all 
+into Employee values('E01', 'Srinivasan', 'Developer', 80000, 'D1')
+into Employee values('E02', 'Wu', 'Analyst', 75000, 'D1')
+into Employee values('E03', 'Mozart', 'Manager', 120000, 'D2')
+into Employee values('E04', 'Einstein', 'Tester', 65000, 'D3')
+into Employee values('E05', 'Gold', 'Coordinator', 80000, 'D1')
+select * from dual;
+
+
+Insert all 
+into Project values('P01', 'Payroll System', 500000)
+into Project values('P02', 'Banking Application', 800000)
+into Project values('P03', 'E-commerce System', 650000)
+into Project values('P04', 'POS System', 700000)
+into Project values('P05', 'Food Oder System', 800000)
+select * from dual;
+
+Insert all
+into Department values('D1', 'IT')
+into Department values('D2', 'Finance')
+into Department values('D3', 'QA')
+select * from dual;
+
+
+
+
+
+
+Insert all 
+into WorkON values('E01', 'P01', 'Coding', 40)
+into WorkON values('E02', 'P02', 'System Analyst', 35)
+into WorkON values('E04', 'P03', 'Testing', 30)
+into WorkON values('E05', 'P04', 'Planning', 20)
+into WorkON values('E01', 'P05', 'Backend Developer', 25)
+select * from dual;
+
+
+4.
+select pid, pname
+from project
+where budget > 700000;
+
+
+5.
+delete from WorkON
+where hours < 30 AND Responsibility = 'Backend Developer';
+
+6.
+update Employee
+set EName = 'Taylor'
+where Position = 'Analyst';
