@@ -1,0 +1,65 @@
+2.
+create table Instructor(
+   id number,
+   name varchar(20),
+   Dept_name varchar(30),
+   Salary number);
+
+create table Course(
+   Course_id varchar2(20),
+   Title varchar2(30),
+   Dept_name varchar2(30));
+
+create table Department(
+   Dept_name varchar2(20),
+   Building varchar2(30),
+   Budget  number);
+
+3.
+insert all 
+into Instructor values (10101,'Srinivasan','Comp.Sci',155000)
+into Instructor values (12121,'Wu','Finance',155000)
+into Instructor values (15151,'Mozart','Music',90000)
+into Instructor values (22222,'Einstein','Physics',100000)
+into Instructor values (33456,'Gold','Biology',120000)
+select * from Dual;
+
+insert all 
+into Course values('CS-101','Intro to Comp.Sci','Comp.Sci')
+into Course values('FIN-201','Investment Banking','Finance')
+into Course values('MU-199','Music Video Production','Music')
+into Course values('PHY-101','Physical Principle','Physics')
+into Course values('BIO-301','Genetics','Biology')
+select * from Dual;
+
+insert all 
+into Department values('Comp.Sci','Taylor',100000)
+into Department values('Finance','Painter',150000)
+into Department values('Music','Packard',80000)
+into Department values('Physics','Watson',90000)
+into Department values('Biology','Watson',120000)
+select * from Dual;
+
+4.
+Select name,Dept_name
+From Instructor
+Where Salary>100000 
+Order by Salary DESC;
+
+5.
+Delete 
+From Course
+Where Title = 'Music Video Production';
+
+
+
+
+6.
+Update Instructor 
+Set Name='Alice Johnson '
+Where Dept_name= (
+Select Dept_name
+From Course
+Where Title = 'Physical Principle');
+
+
