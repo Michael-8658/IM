@@ -1,0 +1,71 @@
+
+2.
+Create Table Suppliers(
+sid char(20), 
+sname char(20),
+status numeric,
+city char(20)
+);
+
+
+Create table Parts(
+pid char(20),
+pname char(20),
+color char(20)
+);
+
+
+Create table SP(
+sid char(20),
+pid char(20),
+qty numeric
+);
+
+
+
+
+3.
+Insert all 
+into Suppliers values('S1', 'Smith', 20, 'London')
+into Suppliers values('S2', 'Jones', 10, 'Paris')
+into Suppliers values('S3', 'Blake', 30, 'Paris')
+into Suppliers values('S4', 'Clark', 20, 'London')
+into Suppliers values('S5', 'Adams', 10, 'London')
+Select * from dual;
+
+
+Insert all 
+into Parts values('P1', 'Net', 'Red')
+into Parts values('P2', 'Bot', 'Green')
+into Parts values('P3', 'Screw', 'Blue')
+into Parts values('P4', 'Screw', 'Red')
+into Parts values('P5', 'Cam', 'Blue')
+select * from dual;
+
+
+Insert all 
+into SP values('S1', 'P1', 300)
+into SP values('S1', 'P2', 200)
+into SP values('S1', 'P3', 600)
+into SP values('S1', 'P4', 200)
+into SP values('S2', 'P2', 600)
+select * from dual;
+
+
+
+
+
+4.
+select sid 
+from Suppliers
+where city = 'Paris' AND status > 20;
+
+5.
+update Suppliers
+set status = status * 2
+where city = 'London';
+
+6.
+update suppliers
+set sid = 'S9'
+where sid = 'S2';
