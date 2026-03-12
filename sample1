@@ -1,0 +1,52 @@
+1.
+Database Username : MKPT-7172
+          Apex username : MKPT-7172
+
+2.
+create table Employee(
+  EmpID varchar(20),
+                 EmpName varchar(20),
+                 DeptName varchar(20),
+                 Salary integer)
+
+ create table Department(
+          	 DeptID varchar(20),
+          	 DeptName varchar(20),
+    	Location varchar(20))
+
+
+
+3.
+INSERT ALL
+INTO Employee VALUES ('E001','John Smith','Engineering',80000)
+INTO Employee VALUES ('E002','Alice Johnson','HR',50000)
+INTO Employee VALUES ('E003','Bob Brown','Finance',75000)
+INTO Employee VALUES ('E004','Carol White','IT',85000)
+INTO Employee VALUES ('E005','David Jones','Marketing',65000)
+INTO Employee VALUES ('E006','Emma Blue','Marketing',65000)
+INTO Employee VALUES ('E007','Frank Black','Engineering',80000)
+SELECT * FROM Dual;
+
+
+insert all
+into Department values('D01','Human Resourses ','New York')
+into Department values('D02','IT','San Francisco')
+select * from  Dual;
+
+
+4.
+select DeptName,Location
+from Department
+where Location LIKE’S%’;
+
+
+5.
+Select DeptName , COUNT(*) AS TOTAL_EMPLOYEE
+	FROM EMPLOYEE
+	GROUP BY Deptname;
+
+6.
+Update department
+	Set deptname = ‘IT Support’
+	Where deptname = ‘IT’;
+
